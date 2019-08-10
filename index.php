@@ -3,6 +3,7 @@ require_once "./vendor/autoload.php";
 
 $view = new View\Classes\View; 
 session_init();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

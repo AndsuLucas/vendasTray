@@ -4,9 +4,10 @@ namespace Controller\Classes;
 class Controller
 {
     private $control_paths = [
-        "salesman_delete"   => "./salesman/salesman_delete.php",
-        "salesman_register" => "./salesman/salesman_register.php",
-        "salesman_update"   => "./salesman/salesman_update.php",
+        "salesman_delete"   => "salesman/salesman_delete.php",
+        "salesman_register" => "salesman/salesman_register.php",
+        "salesman_update"   => "salesman/salesman_update.php",
+        "sale_register"     => "sale/sale_register.php"
     ];
 
     public function returnControlPage(string $page_name)

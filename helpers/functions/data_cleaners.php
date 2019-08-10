@@ -16,22 +16,22 @@ function sanitize(array $field_data_types) {
 	foreach ($field_data_types as $key => $value) {
 		switch ($value) {
 			case 's':
-					$_POST[$key] = preg_replace("/[^a-zA-Z ]/", trim(' '),(string) addslashes(filter_input(INPUT_POST, $key, FILTER_SANITIZE_STRING)));
+				$_POST[$key] = preg_replace("/[^a-zA-Z ]/", trim(' '), (string) $_POST[$key]);
 				break;
-			
 			case 'i':
-					$_POST[$key] = preg_replace("/[^0-9]/", trim(' '),(int) addslashes(filter_input(INPUT_POST, $key, FILTER_SANITIZE_NUMBER_INT)));
+				$_POST[$key] = preg_replace("/[^0-9]/", trim(' '), (int) $_POST[$key]);
 				break;
 			case 'e':
-					$_POST[$key] = addslashes(filter_input(INPUT_POST, $key, FILTER_SANITIZE_EMAIL));
-				break;		
+				$_POST[$key] = addslashes(filter_input(INPUT_POST, $key, FILTER_SANITIZE_EMAIL));
+				break;
+			case "f":
+				$_POST[$key] = preg_replace("/[^0-9 \.]/", trim(' '), (float) $_POST[$key]);
+				break;
 			default:
-					$_POST[$key] = $_POST[$key];
-					break;
+				$_POST[$key] = $_POST[$key];
+				break;
  		}
 
 	}
 	return $_POST;
-
-
 }
