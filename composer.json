@@ -1,0 +1,25 @@
+{
+    "name": "andersonlucas/vendas-tray",
+    "description": "Projeto desenvolvido para o processo seletivo de desenvolvedor php na Tray E-commerece",
+    "authors": [
+        {
+            "name": "Anderson Lucas",
+            "email": "a.lucassilvadeoliveira@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "files":[
+            "./helpers/functions/data_cleaners.php",
+            "./config/database.php",
+            "./helpers/functions/session.php"
+            
+        ],
+        "psr-4":{
+            "Model\\"               :"./model",
+            "Helpers\\Classes\\"    :"./helpers/classes",
+            "Controller\\Classes\\" :"./controller/classes",
+            "View\\Classes\\"       :"./view/classes"
+        }
+    }
+}
