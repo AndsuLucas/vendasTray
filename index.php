@@ -1,6 +1,6 @@
 <?php 
 require_once "./vendor/autoload.php";
-
+/* links para as funcionalidades estão na navbar */
 $view = new View\Classes\View; 
 session_init();
 ?>
