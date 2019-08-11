@@ -2,6 +2,7 @@
 namespace Model;
 
 use PDO;
+//classe responsável por fazer a conexão com o banco de dados
 abstract class Database
 {
     public static function connect()
