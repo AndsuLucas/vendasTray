@@ -41,7 +41,9 @@ class Sale extends Model
     public function getSalesmanSale(int $salesman_id)
     {
         $sql = "SELECT sale.id, comission, salevalue, datesale, salesman.name, salesman.email
-                FROM sale INNER JOIN salesman ON sale.id_salesman = salesman.id WHERE sale.id_salesman = ?";
+                FROM sale INNER JOIN salesman ON sale.id_salesman = salesman.id 
+                WHERE sale.id_salesman = ?
+            ";
 
         $join = $this->database->prepare($sql);
         $join->bindValue(1, $salesman_id);
@@ -50,24 +52,34 @@ class Sale extends Model
         return $join->fetchAll();
 
     }
-    public function boxClosingSaveLog($date_closing)
+    public function boxClosingSaveLog($date_time_closing, $date_closing)
     {
         $sql = "INSERT INTO boxclosinglog(dateclosing, valueofbox) 
                 VALUES(?, (select sum(salevalue) from sale 
-                WHERE DATE_FORMAT(datesale, '%Y-%m-%d-%H-%m-%s') LIKE '%$date_closing%'))
+                WHERE DATE_FORMAT(datesale, '%Y-%m-%d') = '$date_closing'))
              ";
         $insert_total_value = $this->database->prepare($sql);
-        $insert_total_value->bindValue(1, $date_closing);
+        $insert_total_value->bindValue(1, $date_time_closing);
         $result             = $insert_total_value->execute();
         
         return $result;
     }
-    public function returnBoxClosingValue()
+    public function returnLastBoxClosing()
     {
         $sql        = "SELECT SUM(valueofbox) AS total FROM boxclosinglog  ORDER BY dateclosing DESC LIMIT 1";
         $select_sum = $this->database->prepare($sql);
         $select_sum->execute();
         
         return $select_sum->fetch();
+    }
+    
+    public function getAllBoxClosings()
+    {   
+        
+        $sql    = "SELECT * FROM boxclosinglog";
+        $select = $this->database->prepare($sql);
+        $select->execute();
+
+        return $select->fetchAll();
     }
 }
