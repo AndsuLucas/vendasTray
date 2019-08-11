@@ -14,7 +14,8 @@
         "files":[
             "./helpers/functions/data_cleaners.php",
             "./config/database.php",
-            "./helpers/functions/session.php"
+            "./helpers/functions/session.php",
+            "./controller/middlewares/checklogin.php"
             
         ],
         "psr-4":{

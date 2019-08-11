@@ -27,7 +27,7 @@ session_init();
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a target="_blank" class="dropdown-item" href="/?page=sale_list">Listagem</a>
                             <a target="_blank" class="dropdown-item" href="/?page=sale_register">Registrar Venda</a>
-                            <a target="_blank" class="dropdown-item" href="#">Fechar o caixa</a>
+                            <a target="_blank" class="dropdown-item" href="mail/report_day.php">Fechar o caixa</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -39,13 +39,30 @@ session_init();
                             <a target="_blank" class="dropdown-item" href="/?page=salesman_register">Registrar Vendedor</a>
                         </div>
                     </li>
+                    <li class="nav-item dropdown">
+                        <?php if ($_SESSION["authenticate"]): ?>  
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Gestão
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a target="_blank" class="dropdown-item" href="/?page=create_user">Cadastrar Usuário</a>
+                                <a class="dropdown-item" href="controller/?control_page=logout">Sair</a>
+                            </div>
+                        <?php else: ?>
+                            <a href="/?page=login" class="nav-link">Fazer Login</a>
+                        <?php endif ?>
+                    </li>
                 </ul>
+                
             </div>
         </nav>
     </header>
     <main class="container pt-5">    
-        
-        <?php require $view->returnViewPage($_GET["page"] ?? null) ?>
+        <
+        <?php 
+            //rendeniza as views
+            require $view->returnViewPage($_GET["page"] ?? null) 
+        ?>
     
     </main>
 </body>

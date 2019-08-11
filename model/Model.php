@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 use Model\Database;
-
+/* abstração de crud básico */
 class Model
 {
     protected $database;

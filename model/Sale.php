@@ -1,7 +1,9 @@
 <?php
 namespace Model;
 use Model\Model;
-
+/*
+    Modelo responsável pelas vendas
+*/
 class Sale extends Model
 {
     protected $table   = "sale";
@@ -28,6 +30,7 @@ class Sale extends Model
 
         return $result;
     }
+    //retorna as últimas 10 vendas
     public function getAllSales()
     {
         $sql = "SELECT sale.id, comission, salevalue, datesale, salesman.name, salesman.email
@@ -38,6 +41,7 @@ class Sale extends Model
         
         return $join->fetchAll();
     }
+    //retorna as vendas de um vendedor específico
     public function getSalesmanSale(int $salesman_id)
     {
         $sql = "SELECT sale.id, comission, salevalue, datesale, salesman.name, salesman.email
@@ -52,6 +56,7 @@ class Sale extends Model
         return $join->fetchAll();
 
     }
+    //registra o fechamento do caixa
     public function boxClosingSaveLog($date_time_closing, $date_closing)
     {
         $sql = "INSERT INTO boxclosinglog(dateclosing, valueofbox) 
@@ -64,6 +69,7 @@ class Sale extends Model
         
         return $result;
     }
+    //retorna o último fechamento de caixa
     public function returnLastBoxClosing()
     {
         $sql        = "SELECT SUM(valueofbox) AS total FROM boxclosinglog  ORDER BY dateclosing DESC LIMIT 1";

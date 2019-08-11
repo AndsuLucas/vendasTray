@@ -10,6 +10,7 @@ class ComposerStaticInit05b129c75686d280251ddae12af483ed
         'cfb350a101e2e597dbc7b91ab9cdfedd' => __DIR__ . '/../..' . '/helpers/functions/data_cleaners.php',
         '9365660d140feb5daae0e189c5cc1147' => __DIR__ . '/../..' . '/config/database.php',
         'd13ca4f3dad0f85d390ef1079958cc33' => __DIR__ . '/../..' . '/helpers/functions/session.php',
+        'c90e9a757fef741cd6b82912346eefba' => __DIR__ . '/../..' . '/controller/middlewares/checklogin.php',
     );
 
     public static $prefixLengthsPsr4 = array (

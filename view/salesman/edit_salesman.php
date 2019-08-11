@@ -1,12 +1,12 @@
 <?php
-$salesman_id    = preg_replace("[^0-9]", trim(" "), $_GET["id_salesman"]);
-$salesman_model = new Model\Salesman();
-$salesman_row   = $salesman_model->selectWhere("id", $salesman_id);
-    
-if (!$salesman_row) {
-    echo "Registro não encontrado.";
-    return;
-}
+    $salesman_id    = preg_replace("[^0-9]", trim(" "), $_GET["id_salesman"]);
+    $salesman_model = new Model\Salesman();
+    $salesman_row   = $salesman_model->selectWhere("id", $salesman_id);
+        
+    if (!$salesman_row) {
+        echo "Registro não encontrado.";
+        return;
+    }
 ?>
 <div class="container">
     <form action="/controller/?control_page=salesman_update" method="POST">

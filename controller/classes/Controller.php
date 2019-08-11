@@ -8,7 +8,10 @@ class Controller
         "salesman_register" => "salesman/salesman_register.php",
         "salesman_update"   => "salesman/salesman_update.php",
         "sale_register"     => "sale/sale_register.php",
-        "sale_delete"       => "sale/sale_delete.php"
+        "sale_delete"       => "sale/sale_delete.php",
+        "login"             => "auth/login.php",
+        "create_user"       => "auth/create_user.php",
+        "logout"            => "auth/logout.php"
     ];
 
     public function returnControlPage(string $page_name)

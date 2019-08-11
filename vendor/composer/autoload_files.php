@@ -9,4 +9,5 @@ return array(
     'cfb350a101e2e597dbc7b91ab9cdfedd' => $baseDir . '/helpers/functions/data_cleaners.php',
     '9365660d140feb5daae0e189c5cc1147' => $baseDir . '/config/database.php',
     'd13ca4f3dad0f85d390ef1079958cc33' => $baseDir . '/helpers/functions/session.php',
+    'c90e9a757fef741cd6b82912346eefba' => $baseDir . '/controller/middlewares/checklogin.php',
 );

@@ -1,6 +1,14 @@
 <?php
     require_once "../vendor/autoload.php";
-    
+    session_init();
+    if (!checkLogin()) {
+        Helpers\Classes\Message::setMessage(
+            "Para fechar o caixa é necessário estar logado.", "error"
+        );
+
+        header("location: /?page=login");
+        return;
+    }
     $sale_report_model = new Model\Sale;
     $mail_report       = new PHPMailer\PHPMailer\PHPMailer;   
     
