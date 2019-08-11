@@ -18,8 +18,8 @@
             <tr>
                 <td><?= $salesman->name ?></td>
                 <td><?= $salesman->email ?></td>
-                <td><a href="/?page=show_sales&id_salesman=<?= $salesman->id ?>">Vendas</a></td>
-                <td><a href="/?page=edit_salesman&id_salesman=<?= $salesman->id ?>">Editar</a></td>
+                <td><a target="_blank" href="/?page=show_sale&id_salesman=<?= $salesman->id ?>">Vendas</a></td>
+                <td><a target="_blank" href="/?page=edit_salesman&id_salesman=<?= $salesman->id ?>">Editar</a></td>
                 <td>
                     <form action="/controller/?control_page=salesman_delete" class="d-flex justify-content-center" method="POST">
                         <input type="hidden" name="id_salesman" value=<?= $salesman->id ?>>

@@ -9,7 +9,7 @@ class View
         "salesman_register" => "view/salesman/salesman_register.php",
         "sale_register"     => "view/sale/sale_register.php",
         "sale_list"         => "view/sale/sale_list.php",
-        "show_sales"        => "view/sale/show_sales.php"
+        "show_sale"        => "view/sale/show_sale.php"
     ];
 
     public function returnViewPage(string $view = null)

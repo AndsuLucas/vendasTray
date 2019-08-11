@@ -25,6 +25,12 @@
                 <td><?= $sale->datesale ?></td>
                 <td><?= $sale->name ?></td>
                 <td><?= $sale->email ?></td>
+                <td>
+                    <form action="controller/?control_page=sale_delete" method="POST">
+                        <input type="hidden" name="id" value=<?= $sale->id?>>
+                        <input type="submit" class="btn btn-outline-danger" value="Deletar">
+                    </form>
+                </td>
             </tr>
         <?php endforeach ?>
     </table>

@@ -50,4 +50,24 @@ class Sale extends Model
         return $join->fetchAll();
 
     }
+    public function boxClosingSaveLog($date_closing)
+    {
+        $sql = "INSERT INTO boxclosinglog(dateclosing, valueofbox) 
+                VALUES(?, (select sum(salevalue) from sale 
+                WHERE DATE_FORMAT(datesale, '%Y-%m-%d-%H-%m-%s') LIKE '%$date_closing%'))
+             ";
+        $insert_total_value = $this->database->prepare($sql);
+        $insert_total_value->bindValue(1, $date_closing);
+        $result             = $insert_total_value->execute();
+        
+        return $result;
+    }
+    public function returnBoxClosingValue()
+    {
+        $sql        = "SELECT SUM(valueofbox) AS total FROM boxclosinglog  ORDER BY dateclosing DESC LIMIT 1";
+        $select_sum = $this->database->prepare($sql);
+        $select_sum->execute();
+        
+        return $select_sum->fetch();
+    }
 }

@@ -17,6 +17,10 @@ class ComposerStaticInit05b129c75686d280251ddae12af483ed
         array (
             'View\\Classes\\' => 13,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'M' => 
         array (
             'Model\\' => 6,
@@ -35,6 +39,11 @@ class ComposerStaticInit05b129c75686d280251ddae12af483ed
         'View\\Classes\\' => 
         array (
             0 => __DIR__ . '/../..' . '/view/classes',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+            1 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Model\\' => 
         array (

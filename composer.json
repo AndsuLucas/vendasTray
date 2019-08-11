@@ -7,7 +7,9 @@
             "email": "a.lucassilvadeoliveira@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "phpmailer/phpmailer": "~6.0"
+    },
     "autoload":{
         "files":[
             "./helpers/functions/data_cleaners.php",
@@ -19,7 +21,8 @@
             "Model\\"               :"./model",
             "Helpers\\Classes\\"    :"./helpers/classes",
             "Controller\\Classes\\" :"./controller/classes",
-            "View\\Classes\\"       :"./view/classes"
+            "View\\Classes\\"       :"./view/classes",
+            "PHPMailer\\PHPMailer\\": "./vendor/phpmailer/phpmailer/src"
         }
     }
 }

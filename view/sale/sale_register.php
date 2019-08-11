@@ -12,7 +12,7 @@
         <div class="form-group col-8">
             <label for="salesman">Vendedor</label>
             <select name="id_salesman" id="salesman" class="form-control">
-                
+                <option default value="">Escolha o vendedor</option>
                 <?php foreach($salesmans as $salesman): ?>
                     
                     <option value=<?= $salesman->id ?>>
